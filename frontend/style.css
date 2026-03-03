@@ -1,77 +1,20 @@
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    background: #fdf6ff;
-    overflow: hidden;
-}
+<body>
 
-/* Intro Screen */
-.intro-screen {
-    position: fixed;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(135deg, #c084fc, #f9a8d4);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 100;
-    animation: fadeOut 2s ease-in-out 3s forwards;
-}
+    <!-- Intro Animation -->
+    <div class="intro-screen">
+        <h1 class="logo">FinPersona</h1>
+    </div>
 
-.logo {
-    font-size: 70px;
-    color: white;
-    letter-spacing: 6px;
-    animation: zoomIn 2s ease, glow 2s infinite alternate;
-}
+    <!-- Main App -->
+    <div class="main-app">
+        <div class="card">
+            <h2>Welcome to Smart Expense Manager 💖</h2>
+            <p class="subtitle">Your adaptive multi-mode financial companion</p>
 
-/* Glow Effect */
-@keyframes glow {
-    from { text-shadow: 0 0 10px #fff; }
-    to { text-shadow: 0 0 25px #fff, 0 0 40px #ffb6f9; }
-}
+            <button class="mode-btn">Student Mode 🎓</button>
+            <button class="mode-btn">Bachelor Mode 🏡</button>
+        </div>
+    </div>
 
-/* Zoom Animation */
-@keyframes zoomIn {
-    from {
-        transform: scale(0.5);
-        opacity: 0;
-    }
-    to {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
-
-/* Fade Out */
-@keyframes fadeOut {
-    to {
-        opacity: 0;
-        visibility: hidden;
-    }
-}
-
-/* Main App */
-.main-app {
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-.mode-btn {
-    margin: 10px;
-    padding: 12px 25px;
-    border: none;
-    border-radius: 25px;
-    background: linear-gradient(135deg, #c084fc, #f9a8d4);
-    color: white;
-    font-size: 16px;
-    cursor: pointer;
-    transition: 0.3s ease;
-}
-
-.mode-btn:hover {
-    transform: scale(1.1);
-}
+<script src="script.js"></script>
+</body>
