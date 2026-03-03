@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Student Dashboard</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body class="student-body">
+
+<div class="student-container">
+
+    <div class="sidebar">
+        <h2>🎓 FinPersona</h2>
+        <ul>
+            <li>Dashboard</li>
+            <li>Analytics</li>
+            <li>Goals</li>
+            <li onclick="window.location.href='index.html'">Logout</li>
+        </ul>
+    </div>
+
+    <div class="main-content-student">
+
+        <div class="top-header">
+            <h1>₹ 5,000 Remaining</h1>
+            <p>You survived this week. Respect.</p>
+        </div>
+
+        <div class="budget-ring">
+            <div class="ring">
+                <span>70%</span>
+            </div>
+        </div>
+
+        <div class="expense-grid">
+            <div class="expense-card food">
+                <h3>🍕 Food</h3>
+                <p>₹ 1,500</p>
+            </div>
+
+            <div class="expense-card books">
+                <h3>📚 Books</h3>
+                <p>₹ 800</p>
+            </div>
+
+            <div class="expense-card travel">
+                <h3>🚕 Travel</h3>
+                <p>₹ 700</p>
+            </div>
+        </div>
+
+        <button class="floating-btn">+</button>
+
+    </div>
+
+</div>
+
+</body>
+</html>
