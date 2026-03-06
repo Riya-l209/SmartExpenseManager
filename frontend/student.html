@@ -1,61 +1,76 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <title>Student Dashboard</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Student Dashboard</title>
+
+<link rel="stylesheet" href="style.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
-<body class="student-body">
 
-<div class="student-container">
+<body>
 
-    <div class="sidebar">
-        <h2>🎓 FinPersona</h2>
-        <ul>
-            <li>Dashboard</li>
-            <li>Analytics</li>
-            <li>Goals</li>
-            <li onclick="window.location.href='index.html'">Logout</li>
-        </ul>
-    </div>
+<div class="dashboard">
 
-    <div class="main-content-student">
+<!-- Sidebar -->
 
-        <div class="top-header">
-            <h1>₹ 5,000 Remaining</h1>
-            <p>You survived this week. Respect.</p>
-        </div>
+<div class="sidebar">
 
-        <div class="budget-ring">
-            <div class="ring">
-                <span>70%</span>
-            </div>
-        </div>
+<h2>FinPersona</h2>
 
-        <div class="expense-grid">
-            <div class="expense-card food">
-                <h3>🍕 Food</h3>
-                <p>₹ 1,500</p>
-            </div>
-
-            <div class="expense-card books">
-                <h3>📚 Books</h3>
-                <p>₹ 800</p>
-            </div>
-
-            <div class="expense-card travel">
-                <h3>🚕 Travel</h3>
-                <p>₹ 700</p>
-            </div>
-        </div>
-
-        <button class="floating-btn">+</button>
-
-    </div>
+<ul>
+<li>🏠 Dashboard</li>
+<li>💸 Expenses</li>
+<li>🎯 Goals</li>
+<li>📊 Insights</li>
+<li>⚙ Settings</li>
+</ul>
 
 </div>
 
+<!-- Main Content -->
+
+<div class="main-content">
+
+<h1>Student Dashboard</h1>
+
+<p>Track your spending and stay financially smart.</p>
+
+<div class="cards">
+
+<div class="card">
+<h3>Monthly Budget</h3>
+<p>₹ 10,000</p>
+</div>
+
+<div class="card">
+<h3>Spent</h3>
+<p>₹ 0</p>
+</div>
+
+<div class="card">
+<h3>Remaining</h3>
+<p>₹ 10,000</p>
+</div>
+
+</div>
+
+<button class="add-expense-btn">
++ Add Expense
+</button>
+
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
