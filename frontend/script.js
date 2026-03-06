@@ -108,3 +108,62 @@ window.location.href = "student.html";
 }
 
 });
+let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+
+function goToAddExpense(){
+    window.location.href = "add-expense.html";
+}
+
+function addTransaction(){
+
+    let title = document.getElementById("title").value;
+    let amount = document.getElementById("amount").value;
+    let category = document.getElementById("category").value;
+
+    let transaction = {
+        title:title,
+        amount:amount,
+        category:category
+    };
+
+    transactions.push(transaction);
+
+    localStorage.setItem("transactions",JSON.stringify(transactions));
+
+    window.location.href = "student.html";
+}
+
+function loadTransactions(){
+
+    let list = document.getElementById("transaction-list");
+
+    if(!list) return;
+
+    list.innerHTML="";
+
+    let income=0;
+    let expense=0;
+
+    transactions.forEach(function(t){
+
+        let row = `
+        <tr>
+        <td>${t.title}</td>
+        <td>₹${t.amount}</td>
+        <td>${t.category}</td>
+        </tr>
+        `;
+
+        list.innerHTML += row;
+
+        expense += Number(t.amount);
+
+    });
+
+    document.getElementById("expense").innerText="₹"+expense;
+    document.getElementById("income").innerText="₹0";
+    document.getElementById("balance").innerText="₹"+(-expense);
+
+}
+
+loadTransactions();

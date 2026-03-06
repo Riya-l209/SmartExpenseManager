@@ -4,37 +4,76 @@
 <meta charset="UTF-8">
 <title>Add Expense</title>
 <link rel="stylesheet" href="style.css">
+
+<style>
+
+body{
+    font-family:Poppins;
+    background:linear-gradient(135deg,#f8d3ff,#ffd6ec,#e6d9ff);
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    height:100vh;
+}
+
+.container{
+    background:white;
+    padding:40px;
+    border-radius:15px;
+    width:350px;
+    box-shadow:0 10px 25px rgba(0,0,0,0.15);
+}
+
+h2{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+input,select{
+    width:100%;
+    padding:12px;
+    margin-bottom:15px;
+    border-radius:8px;
+    border:1px solid #ddd;
+}
+
+button{
+    width:100%;
+    padding:12px;
+    background:#ff7ad9;
+    color:white;
+    border:none;
+    border-radius:25px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+button:hover{
+    background:#ff4fc4;
+}
+
+</style>
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>Add Expense 💸</h1>
+<h2>Add Expense</h2>
 
-<form id="expenseForm">
+<input type="text" id="title" placeholder="Expense Title">
 
-<input type="text" id="title" placeholder="Expense Title (Food, Cab, etc)" required>
-
-<input type="number" id="amount" placeholder="Amount ₹" required>
+<input type="number" id="amount" placeholder="Amount">
 
 <select id="category">
 <option>Food</option>
 <option>Transport</option>
 <option>Shopping</option>
-<option>Education</option>
-<option>Other</option>
+<option>Study</option>
+<option>Entertainment</option>
 </select>
 
-<button type="submit">Add Expense</button>
-
-</form>
-
-<br>
-
-<a href="student.html">
-<button>Back to Dashboard</button>
-</a>
+<button onclick="addTransaction()">Add Transaction</button>
 
 </div>
 
