@@ -1,76 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Mode - Smart Finance</title>
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
 
-<title>Student Dashboard</title>
+    <style>
+        body{
+            margin:0;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg,#f8d3ff,#ffd6ec,#e6d9ff);
+            min-height:100vh;
+        }
 
-<link rel="stylesheet" href="style.css">
+        .navbar{
+            background:white;
+            padding:15px 40px;
+            display:flex;
+            justify-content:space-between;
+            align-items:center;
+            box-shadow:0 5px 15px rgba(0,0,0,0.1);
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+        .logo{
+            font-size:24px;
+            font-weight:bold;
+            color:#7a4fff;
+        }
 
+        .container{
+            padding:40px;
+        }
+
+        .welcome{
+            font-size:28px;
+            font-weight:600;
+            margin-bottom:30px;
+        }
+
+        .cards{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+            gap:20px;
+        }
+
+        .card{
+            background:white;
+            border-radius:15px;
+            padding:25px;
+            box-shadow:0 10px 20px rgba(0,0,0,0.1);
+            transition:0.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+        }
+
+        .card h3{
+            margin:0;
+            color:#666;
+        }
+
+        .amount{
+            font-size:28px;
+            font-weight:bold;
+            margin-top:10px;
+            color:#7a4fff;
+        }
+
+        .add-btn{
+            margin-top:30px;
+            padding:15px 30px;
+            border:none;
+            border-radius:30px;
+            font-size:16px;
+            cursor:pointer;
+            background:#ff7ad9;
+            color:white;
+            transition:0.3s;
+        }
+
+        .add-btn:hover{
+            background:#ff4fc4;
+        }
+
+        table{
+            width:100%;
+            margin-top:40px;
+            border-collapse:collapse;
+            background:white;
+            border-radius:10px;
+            overflow:hidden;
+            box-shadow:0 10px 20px rgba(0,0,0,0.1);
+        }
+
+        th,td{
+            padding:15px;
+            text-align:left;
+        }
+
+        th{
+            background:#f3e8ff;
+        }
+
+        tr:nth-child(even){
+            background:#faf5ff;
+        }
+    </style>
 </head>
 
 <body>
 
-<div class="dashboard">
-
-<!-- Sidebar -->
-
-<div class="sidebar">
-
-<h2>FinPersona</h2>
-
-<ul>
-<li>🏠 Dashboard</li>
-<li>💸 Expenses</li>
-<li>🎯 Goals</li>
-<li>📊 Insights</li>
-<li>⚙ Settings</li>
-</ul>
-
+<div class="navbar">
+    <div class="logo">Smart Student Finance</div>
 </div>
 
-<!-- Main Content -->
+<div class="container">
 
-<div class="main-content">
+    <div class="welcome">
+        Hello Student 👋 Let's track your money!
+    </div>
 
-<h1>Student Dashboard</h1>
+    <div class="cards">
 
-<p>Track your spending and stay financially smart.</p>
+        <div class="card">
+            <h3>Total Balance</h3>
+            <div class="amount" id="balance">₹0</div>
+        </div>
 
-<div class="cards">
+        <div class="card">
+            <h3>Total Income</h3>
+            <div class="amount" id="income">₹0</div>
+        </div>
 
-<div class="card">
-<h3>Monthly Budget</h3>
-<p>₹ 10,000</p>
-</div>
+        <div class="card">
+            <h3>Total Expense</h3>
+            <div class="amount" id="expense">₹0</div>
+        </div>
 
-<div class="card">
-<h3>Spent</h3>
-<p>₹ 0</p>
-</div>
+    </div>
 
-<div class="card">
-<h3>Remaining</h3>
-<p>₹ 10,000</p>
-</div>
+    <button class="add-btn" onclick="goToAddExpense()">+ Add Expense</button>
 
-</div>
+    <table>
+        <thead>
+            <tr>
+                <th>Title</th>
+                <th>Amount</th>
+                <th>Category</th>
+            </tr>
+        </thead>
 
-<button class="add-expense-btn">
-+ Add Expense
-</button>
-
-</div>
+        <tbody id="transaction-list">
+        </tbody>
+    </table>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
-
 </html>

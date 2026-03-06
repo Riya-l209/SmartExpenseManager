@@ -73,3 +73,38 @@ function addExpense() {
 
 // ---------- Initial Load ----------
 updateBudgetRing();
+document.addEventListener("DOMContentLoaded", () => {
+
+const form = document.getElementById("expenseForm");
+
+if(form){
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+let title = document.getElementById("title").value;
+let amount = document.getElementById("amount").value;
+let category = document.getElementById("category").value;
+
+let expense = {
+title: title,
+amount: amount,
+category: category
+};
+
+let expenses = JSON.parse(localStorage.getItem("expenses")) || [];
+
+expenses.push(expense);
+
+localStorage.setItem("expenses", JSON.stringify(expenses));
+
+alert("Expense Added Successfully ✅");
+
+window.location.href = "student.html";
+
+});
+
+}
+
+});
