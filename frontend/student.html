@@ -1,165 +1,130 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Mode - Smart Finance</title>
+<meta charset="UTF-8">
+<title>Student Dashboard</title>
+<link rel="stylesheet" href="style.css">
 
-    <link rel="stylesheet" href="style.css">
+<style>
 
-    <style>
-        body{
-            margin:0;
-            font-family: 'Poppins', sans-serif;
-            background: linear-gradient(135deg,#f8d3ff,#ffd6ec,#e6d9ff);
-            min-height:100vh;
-        }
+body{
+    font-family:Poppins;
+    background:linear-gradient(135deg,#f6d5ff,#ffd6ec,#e8dcff);
+    margin:0;
+}
 
-        .navbar{
-            background:white;
-            padding:15px 40px;
-            display:flex;
-            justify-content:space-between;
-            align-items:center;
-            box-shadow:0 5px 15px rgba(0,0,0,0.1);
-        }
+.header{
+    display:flex;
+    justify-content:space-between;
+    padding:20px 40px;
+}
 
-        .logo{
-            font-size:24px;
-            font-weight:bold;
-            color:#7a4fff;
-        }
+.header h1{
+    color:#444;
+}
 
-        .container{
-            padding:40px;
-        }
+.add-btn{
+    background:#ff7ad9;
+    border:none;
+    padding:12px 20px;
+    color:white;
+    border-radius:25px;
+    cursor:pointer;
+}
 
-        .welcome{
-            font-size:28px;
-            font-weight:600;
-            margin-bottom:30px;
-        }
+.dashboard{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    margin-top:20px;
+}
 
-        .cards{
-            display:grid;
-            grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-            gap:20px;
-        }
+.card{
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    width:200px;
+    text-align:center;
+    box-shadow:0 10px 20px rgba(0,0,0,0.1);
+}
 
-        .card{
-            background:white;
-            border-radius:15px;
-            padding:25px;
-            box-shadow:0 10px 20px rgba(0,0,0,0.1);
-            transition:0.3s;
-        }
+.table-container{
+    margin:40px;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+}
 
-        .card:hover{
-            transform:translateY(-5px);
-        }
+table{
+    width:100%;
+    border-collapse:collapse;
+}
 
-        .card h3{
-            margin:0;
-            color:#666;
-        }
+th,td{
+    padding:12px;
+    text-align:center;
+    border-bottom:1px solid #eee;
+}
 
-        .amount{
-            font-size:28px;
-            font-weight:bold;
-            margin-top:10px;
-            color:#7a4fff;
-        }
+</style>
 
-        .add-btn{
-            margin-top:30px;
-            padding:15px 30px;
-            border:none;
-            border-radius:30px;
-            font-size:16px;
-            cursor:pointer;
-            background:#ff7ad9;
-            color:white;
-            transition:0.3s;
-        }
-
-        .add-btn:hover{
-            background:#ff4fc4;
-        }
-
-        table{
-            width:100%;
-            margin-top:40px;
-            border-collapse:collapse;
-            background:white;
-            border-radius:10px;
-            overflow:hidden;
-            box-shadow:0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        th,td{
-            padding:15px;
-            text-align:left;
-        }
-
-        th{
-            background:#f3e8ff;
-        }
-
-        tr:nth-child(even){
-            background:#faf5ff;
-        }
-    </style>
 </head>
 
 <body>
 
-<div class="navbar">
-    <div class="logo">Smart Student Finance</div>
+<div class="header">
+
+<h1>Student Finance Dashboard</h1>
+
+<button class="add-btn" onclick="goToAddExpense()">Add Expense</button>
+
 </div>
 
-<div class="container">
 
-    <div class="welcome">
-        Hello Student 👋 Let's track your money!
-    </div>
+<div class="dashboard">
 
-    <div class="cards">
+<div class="card">
+<h3>Balance</h3>
+<h2 id="balance">₹0</h2>
+</div>
 
-        <div class="card">
-            <h3>Total Balance</h3>
-            <div class="amount" id="balance">₹0</div>
-        </div>
+<div class="card">
+<h3>Total Income</h3>
+<h2 id="income">₹0</h2>
+</div>
 
-        <div class="card">
-            <h3>Total Income</h3>
-            <div class="amount" id="income">₹0</div>
-        </div>
+<div class="card">
+<h3>Total Expense</h3>
+<h2 id="expense">₹0</h2>
+</div>
 
-        <div class="card">
-            <h3>Total Expense</h3>
-            <div class="amount" id="expense">₹0</div>
-        </div>
+</div>
 
-    </div>
 
-    <button class="add-btn" onclick="goToAddExpense()">+ Add Expense</button>
+<div class="table-container">
 
-    <table>
-        <thead>
-            <tr>
-                <th>Title</th>
-                <th>Amount</th>
-                <th>Category</th>
-            </tr>
-        </thead>
+<h2>Transactions</h2>
 
-        <tbody id="transaction-list">
-        </tbody>
-    </table>
+<table>
+
+<thead>
+<tr>
+<th>Title</th>
+<th>Amount</th>
+<th>Category</th>
+</tr>
+</thead>
+
+<tbody id="transaction-list">
+</tbody>
+
+</table>
 
 </div>
 
 <script src="script.js"></script>
 
 </body>
+
 </html>
