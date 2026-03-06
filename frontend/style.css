@@ -257,3 +257,38 @@ body {
     color: white;
     cursor: pointer;
 }
+.landing-container{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+background:linear-gradient(135deg,#fbcfe8,#e9d5ff);
+font-family:Poppins;
+}
+
+.logo{
+font-size:60px;
+color:#7c3aed;
+}
+
+.tagline{
+font-size:18px;
+margin-bottom:40px;
+}
+
+.mode-buttons button{
+padding:15px 30px;
+margin:10px;
+border:none;
+border-radius:25px;
+font-size:16px;
+cursor:pointer;
+background:linear-gradient(135deg,#c084fc,#f9a8d4);
+color:white;
+transition:0.3s;
+}
+
+.mode-buttons button:hover{
+transform:scale(1.05);
+}
