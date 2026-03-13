@@ -1,12 +1,13 @@
+// Get saved transactions
 let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
 
-// Go to Add Expense Page
+// Go to Add Expense page
 function goToAddExpense(){
     window.location.href = "add-expense.html";
 }
 
 
-// Add Transaction
+// Add transaction
 function addTransaction(){
 
     let title = document.getElementById("title").value;
@@ -32,7 +33,7 @@ function addTransaction(){
 }
 
 
-// Load Transactions
+// Load transactions
 function loadTransactions(){
 
     let list = document.getElementById("transaction-list");
@@ -46,24 +47,41 @@ function loadTransactions(){
     let income = 0;
     let expense = 0;
 
-    transactions.forEach(function(t){
+    transactions.forEach(function(t,index){
 
         let row = `
         <tr>
             <td>${t.title}</td>
             <td>₹${t.amount}</td>
             <td>${t.category}</td>
+            <td>
+                <button class="delete-btn" onclick="deleteTransaction(${index})">Delete</button>
+            </td>
         </tr>
         `;
 
         list.innerHTML += row;
 
         expense += t.amount;
+
     });
 
     document.getElementById("expense").innerText = "₹" + expense;
     document.getElementById("income").innerText = "₹0";
     document.getElementById("balance").innerText = "₹" + (-expense);
+}
+
+
+// Delete transaction
+function deleteTransaction(index){
+
+    let transactions = JSON.parse(localStorage.getItem("transactions")) || [];
+
+    transactions.splice(index,1);
+
+    localStorage.setItem("transactions", JSON.stringify(transactions));
+
+    location.reload();
 }
 
 
