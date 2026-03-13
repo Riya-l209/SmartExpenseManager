@@ -4,7 +4,10 @@
 <head>
 <meta charset="UTF-8">
 <title>Student Dashboard</title>
+
 <link rel="stylesheet" href="style.css">
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
 <style>
 
@@ -76,6 +79,19 @@ th,td{
     cursor:pointer;
 }
 
+.chart-container{
+    margin:40px;
+    background:white;
+    padding:20px;
+    border-radius:15px;
+}
+
+canvas{
+    max-width:500px;
+    margin:auto;
+    display:block;
+}
+
 </style>
 
 </head>
@@ -109,6 +125,7 @@ th,td{
 
 </div>
 
+
 <div class="table-container">
 
 <h2>Transactions</h2>
@@ -130,6 +147,16 @@ th,td{
 </table>
 
 </div>
+
+
+<div class="chart-container">
+
+<h2>Expense Analytics</h2>
+
+<canvas id="expenseChart"></canvas>
+
+</div>
+
 
 <script src="script.js"></script>
 
